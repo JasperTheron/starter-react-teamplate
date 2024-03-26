@@ -15,10 +15,10 @@ const requests = {
 // Example of Requests Specified to a Model
 const Model = {
     listAll: () => requests.get<Model[]>('model/records'),
-    details: (id: number) => requests.get<Model[]>(`model/${id}`),
+    details: (id: number) => requests.get<Model>(`model/${id}`),
     create: (model: Model) => requests.post<void>('model/', model),
     update: (model: Model) => requests.post<void>(`model/${model.id}`, model),
-    delete: (id: number) => requests.get<Model[]>(`model/${id}`),
+    delete: (id: number) => requests.get<Model>(`model/${id}`),
 }
 
 // Add the Request Obj to the Agent Obj for Use
